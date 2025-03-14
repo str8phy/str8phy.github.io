@@ -51,14 +51,14 @@
   <div class="post-content e-content" itemprop="articleBody">
     <p>So far rotations are the heart of mechanics for me.</p>
 
-<p>The following simple example exploits following cocepts:</p>
+<p>The following simple example exploits following concepts:</p>
 
 <ul>
   <li>moving pivot</li>
   <li>restricted motion</li>
   <li>accelerated &amp; inertial frames of reference</li>
-  <li>noncontinuously forces</li>
-  <li>analogy between gravity force of vertical pendulum &amp; friction force in considered setup (tab this horizontal pendulum)</li>
+  <li>noncontinuous forces</li>
+  <li>analogy between gravity force of vertical pendulum &amp; friction force in the following setup</li>
 </ul>
 
 <h1 id="scope">Scope</h1>
@@ -70,7 +70,7 @@
 
 <h2 id="setup--">Setup  <a name="Setup"></a></h2>
 
-<p>The setup is depicted on <strong>fig.1</strong>. \(x_1\) starts moving forward at \(t=t_0\) with speed being constant at \(t_0&lt;t&lt;\infty\).</p>
+<p>The setup is depicted on <strong>fig.1</strong>: \(x_1\) starts moving forward at \(t=t_0\) with speed being constant at \(t_0&lt;t&lt;\infty\).</p>
 
 <p><img src="/assets/pics/SlidingRotate/fig1.png" alt="pic1" /></p>
 
@@ -78,7 +78,7 @@
 
 <p>The problem is to describe the motion of \(x_2\).</p>
 
-<p>Intuitevly, \(x_2\) will gradually align its path with \(\dot{x}_1\), i.e. velocity of \(x_1\). 
+<p>Intuitively, \(x_2\) is expected to align its direction gradually with \(\dot{\vec{x}}_1\), i.e. velocity of \(x_1\). 
 This can actually be checked by plugging two bounded buttons across a table desk. Produced motion will likely look more or less like this:</p>
 
 <p><img src="/assets/pics/SlidingRotate/fig2.gif" alt="pic2" /></p>
@@ -92,30 +92,29 @@ with origin at \(x_1\) alongside with inertial r.f. \(\mathcal{S}_0\) (with orig
 
 <p>Under frictionless assumption there are no torque-generating forces in \(S_1\), so the moment is conserved at \(t&gt;t_0\).</p>
 
-<p>Now let’s take a look on what make the rod rotate at \(t=t_0\).</p>
+<p>Now let’s take a look on what makes the rod rotate at \(t=t_0\).</p>
 
-<p>Say the velocity of pivot point \(x_1\) goes from \(0\) to \(v\) at some finite time span \(\Delta t\). From FPD</p>
+<p>Say the velocity of pivot \(x_1\) goes from \(0\) to \(v\) at some finite time span \(\Delta t\). From FPD</p>
 
 \[F\Delta t = mv,\]
 
-<p>where \(\Delta t\) might be taken arbitrarly small, \(m\) is a point mass taken \(m=1\) in the following.</p>
+<p>where \(\Delta t\) might be thought of being arbitrarly small, \(m\) is a point mass taken \(m=1\) in the following.</p>
 
 <p>I.e. some force \(F\) must have been applied to \(S_1\) to set it in motion. 
-This force provide an “apparent” force inside \(S_1\) as seen from following considerations:</p>
+This force provides an “apparent” force inside \(S_1\) as seen from following considerations:</p>
 
 \[\ddot{x}_2 \left.\right|_{\mathcal{S}_0} = \ddot{x}_2 \left.\right|_{\mathcal{S}_1} + \ddot{x}_1 \left.\right|_{\mathcal{S}_0},\]
 
-<p>where \(x\lvert_{\mathcal{S}_i}\) is a coordinate of \(x\) in r.f. \(\mathcal{S}_i\)</p>
+<p>where \(x\lvert_{\mathcal{S}_i}\) is a coordinate of \(x\) in r.f. \(\mathcal{S}_i\).</p>
 
-<p>passing from accelerations to forces one identify the force seen by \(x_2\) in \(\mathcal{S}_1\) as</p>
+<p>Passing from accelerations to forces one identify apparent force seen by \(x_2\) in \(\mathcal{S}_1\) as</p>
 
-\[\vec{F}_2\left.\right|_{\mathcal{S}_1} = \vec{F}_1 \left.\right|_{\mathcal{S}_0} + \vec{F},\]
+\[\vec{F}_2\left.\right|_{\mathcal{S}_1} = \vec{F}_2 \left.\right|_{\mathcal{S}_0} + \vec{F},\]
 
-<p>Following the setup, the component \(\vec{F}_1\lvert_{\mathcal{S}_0}\) is essentially a reaction force along the rod, thus not producing torque.
-On the other hand, the \(\vec{F}\) is pointed to right,
- thus having both the normal \(\left(\vec{F}_n\right)\) and tangent \(\left(\vec{F}_\tau\right)\) components relative to \(\overrightarrow{x_2-x_1}\).</p>
-
-<p>From notions on <strong>Fig.1</strong>: \(F_n=F\sin\varphi\).</p>
+<p>Following the setup, the component \(\vec{F}_2\lvert_{\mathcal{S}_0}\) is essentially a reaction force along the rod, thus not producing torque.
+On the other hand, \(\vec{F}\) is always pointed to right on our picture,
+ thus having both the normal \(\left(\vec{F}_n\right)\) and tangential \(\left(\vec{F}_\tau\right)\) components relative to \(\overrightarrow{x_2-x_1}\).
+ From notions on <strong>Fig.1</strong> follows \(F_n=F\sin\varphi\).</p>
 
 <p>The change of momentum for \(x_2\) in \(\mathcal{S}_1\) is then</p>
 
@@ -123,7 +122,7 @@ On the other hand, the \(\vec{F}\) is pointed to right,
 
 <p>where \(I_z=\frac{1}{2}ml^2\) is a moment of inertia of \(x_2\) relative to z-axis through \(x_1\).</p>
 
-<p>From the above equation under frictionless assumption solution is \(x_2\) orbiting around \(x_1\):</p>
+<p>From the above equation, solution to the problem under frictionless assumption is \(x_2\) being orbiting around \(x_1\) as depicted on <strong>Fig.3</strong>.</p>
 
 <p><img src="/assets/pics/SlidingRotate/fig3.gif" alt="pic3" /></p>
 
@@ -131,7 +130,7 @@ On the other hand, the \(\vec{F}\) is pointed to right,
 
 <h2 id="adding-friction-">Adding Friction <a name="friction"></a></h2>
 
-<p>Things gets more interesting when some friction is added in the mix.
+<p>Things get more interesting when some friction is added in the mix.
 The following model is adopted for friction here:</p>
 
 \[\vec{f} = -k\dot{x},\]
@@ -140,15 +139,15 @@ The following model is adopted for friction here:</p>
 
 \[\dot{x}_2 \left.\right|_{\mathcal{S}_0}  = \left[\begin{array}{c} v\\0 \end{array}\right] + \frac{d}{dt}R_\varphi \left[\begin{array}{c} l\\0 \end{array}\right],\]
 
-<p>the \(R_varphi\) begin a rotation matrix:</p>
+<p>the \(R_\varphi\) defines a rotation matrix:</p>
 
 \[R_\varphi = \left(\begin{array}{lr} \cos\varphi &amp; -\sin\varphi\\ \sin\varphi &amp; \cos\varphi\end{array}\right)\]
 
 <p>Accounting \(\cos\varphi\sim1, \sin\varphi\sim\varphi\) for small \(\varphi\) one may write</p>
 
-<p>\(dR_\varphi l= R_{d\varphi} R_\varphi \sim \left(\begin{array}{lr} 0&amp;-d\varphi\\d\varphi&amp;0\end{array}\right)R_\varphi\).</p>
+<p>\(dR_\varphi= R_{d\varphi} R_\varphi \sim \left(\begin{array}{lr} 0&amp;-d\varphi\\d\varphi&amp;0\end{array}\right)R_\varphi\).</p>
 
-<p>The above equation for \(\dot{x}_2\) can the be rewritten as follows:</p>
+<p>The above equation for \(\dot{x}_2\) can then be rewritten as follows:</p>
 
 \[\dot{x}_2 \left.\right|_{\mathcal{S}_0}  = \left[\begin{array}{c} v\\0 \end{array}\right] + \dot{\varphi}\times R_\varphi \left[\begin{array}{c} l\\0 \end{array}\right],\]
 
@@ -156,10 +155,10 @@ The following model is adopted for friction here:</p>
 
 <p>The motion in \(\mathcal{S}_1\) is then defined by</p>
 
-\[I_z\ddot{varphi} = \overrightarrow{x_2-x_1} \times \vec{f} = \left[\begin{array}{r}-lcos\varphi\\l\sin\varphi\end{array}\right] \times
+\[I_z\ddot{\varphi} = \overrightarrow{x_2-x_1} \times \vec{f} = \left[\begin{array}{r}-lcos\varphi\\l\sin\varphi\end{array}\right] \times
 \left[\begin{array}{l}-kv - k\dot{\varphi}l\sin\varphi\\-k\dot{\varphi}l\cos\varphi\end{array}\right] = -kl\left(v\sin\varphi + \dot{\varphi}l\right)\]
 
-<p>The latter equation describe the self-controlling property of the motion as the torque is always pointed counter-wise with the direction of rotation, i.e. sign of \(\dot{\varphi}\).
+<p>The latter equation describes the self-controlling property of the motion as the torque is always pointed counter-wise with the direction of rotation, i.e. the signs \(\ddot{\varphi}\) and \(\dot{\varphi}\) are opposite.
 This point is illustrated on <strong>Fig.4</strong>, while the overall picture was depicted on <strong>Fig.2</strong> above.</p>
 
 <p><img src="/assets/pics/SlidingRotate/fig4.png" alt="pic4" /></p>
