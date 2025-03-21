@@ -78,51 +78,119 @@
 
 <p>The problem is to describe the motion of \(x_2\).</p>
 
-<p>Intuitively, \(x_2\) is expected to align its direction gradually with \(\dot{\vec{x}}_1\), i.e. velocity of \(x_1\). 
+<p>Intuitively, \(x_2\) is expected to align its direction gradually with the that of \(x_1\). 
 This can actually be checked by plugging two bounded buttons across a table desk. Produced motion will likely look more or less like this:</p>
 
 <p><img src="/assets/pics/SlidingRotate/fig2.gif" alt="pic2" /></p>
 
 <p><em><strong>Fig.2</strong> Typical motion with friction</em></p>
 
-<h2 id="identifying-forces-">Identifying forces <a name="Forces"></a></h2>
+<h2 id="rotational-kinematics-">Rotational kinematics <a name="Kine"></a></h2>
 
 <p>Exploiting the restriction of \(x_2\) being bound to \(x_1\) one might consider reference frame (r.f.) \(\mathcal{S}_1\) 
 with origin at \(x_1\) alongside with inertial r.f. \(\mathcal{S}_0\) (with origin at some fixed point, say \((0,0)\)).</p>
 
-<p>Under frictionless assumption there are no torque-generating forces in \(S_1\), so the moment is conserved at \(t&gt;t_0\).</p>
+<p>Motion of \(x_2\) with resp. to \(\mathcal{S}_0\) is obviously a sum of its motion with resp. to \(\mathcal{S}_1\) and a motion of \(x_1\) in \(\mathcal{S}_0\):</p>
 
-<p>Now let’s take a look on what makes the rod rotate at \(t=t_0\).</p>
+\[x_2 \left.\right|_{\mathcal{S}_0} = x_2 \left.\right|_{\mathcal{S}_1} + x_1 \left.\right|_{\mathcal{S}_0}, \qquad \;(1)\]
 
-<p>Say the velocity of pivot \(x_1\) goes from \(0\) to \(v\) at some finite time span \(\Delta t\). From FPD</p>
+<p>Following the restrictions imposed by setup, all possible trajectories of \(x_2\) in \(\mathcal{S}_1\) lay on circle around \(x_1\), 
+thus may be described by the rotational operator \(R_\varphi\):</p>
 
-\[F\Delta t = mv,\]
+<!--
 
-<p>where \(\Delta t\) might be thought of being arbitrarly small, \(m\) is a point mass taken \(m=1\) in the following.</p>
+$$ \dot{x}_2 \left.\right|_{\mathcal{S}_0}  = \frac{d}{dt}R_\varphi \left[\begin{array}{c} l\\0 \end{array}\right] + \left[\begin{array}{c} v\\0 \end{array}\right] ,$$
+the $$R_\varphi$$ defines a rotation matrix:
+-->
 
-<p>I.e. some force \(F\) must have been applied to \(S_1\) to set it in motion. 
-This force provides an “apparent” force inside \(S_1\) as seen from following considerations:</p>
+\[R_\varphi = \left(\begin{array}{lr} \cos\varphi &amp; -\sin\varphi\\ \sin\varphi &amp; \cos\varphi\end{array}\right),\]
 
-\[\ddot{x}_2 \left.\right|_{\mathcal{S}_0} = \ddot{x}_2 \left.\right|_{\mathcal{S}_1} + \ddot{x}_1 \left.\right|_{\mathcal{S}_0},\]
+<p>i.e. \(x_2\lvert_{\mathcal{S}_1} = R_\varphi \left[\begin{array}{c} l\\0 \end{array}\right].\)</p>
 
-<p>where \(x\lvert_{\mathcal{S}_i}\) is a coordinate of \(x\) in r.f. \(\mathcal{S}_i\).</p>
+<p>For the expression of derivatives of \(x_2\) it is to note that \(\cos\varphi\sim1, \sin\varphi\sim\varphi\) for small \(\varphi\). Thus</p>
 
-<p>Passing from accelerations to forces one identify apparent force seen by \(x_2\) in \(\mathcal{S}_1\) as</p>
+<!-- one may write -->
 
-\[\vec{F}_2\left.\right|_{\mathcal{S}_1} = \vec{F}_2 \left.\right|_{\mathcal{S}_0} + \vec{F},\]
+\[dR_\varphi x = \left(\begin{array}{lr} 0&amp;-d\varphi\\d\varphi&amp;0\end{array}\right)x = \dot{\vec{\varphi}}\times x,\]
 
-<p>Following the setup, the component \(\vec{F}_2\lvert_{\mathcal{S}_0}\) is essentially a reaction force along the rod, thus not producing torque.
-On the other hand, \(\vec{F}\) is always pointed to right on our picture,
- thus having both the normal \(\left(\vec{F}_n\right)\) and tangential \(\left(\vec{F}_\tau\right)\) components relative to \(\overrightarrow{x_2-x_1}\).
- From notions on <strong>Fig.1</strong> follows \(F_n=F\sin\varphi\).</p>
+<p>where \(\vec{\varphi}\) is thought to be a vector having amplitude \(\varphi\) and being pointed along the pivot axis that passes through \(x_1\).</p>
 
-<p>The change of momentum for \(x_2\) in \(\mathcal{S}_1\) is then</p>
+<!--As in our 2D setup this axis is always perpendicular to the figure plane the vector sign -->
 
-\[\Delta M  \overset{\Delta}{=} \Delta I_z\dot{\varphi}=-mv\sin\varphi_0,\]
+<!-- = R_{d\varphi} R_\varphi \sim-->
 
-<p>where \(I_z=\frac{1}{2}ml^2\) is a moment of inertia of \(x_2\) relative to z-axis through \(x_1\).</p>
+<p>The derivatives of \(x_2\lvert_{\mathcal{S}_1}\) can then be written as follows:</p>
 
-<p>From the above equation, solution to the problem under frictionless assumption is \(x_2\) being orbiting around \(x_1\) as depicted on <strong>Fig.3</strong>.</p>
+\[\begin{array}{l}
+\dot{\vec{x}}_2 \left.\right|_{\mathcal{S}_0}  = 
+\dot{\varphi}\times R_\varphi \left[\begin{array}{c} l\\0 \end{array}\right] + \left[\begin{array}{c} v\\0 \end{array}\right],\\
+\ddot{\vec{x}}_2 \left.\right|_{\mathcal{S}_0}  = 
+\ddot{\varphi}\times R_\varphi \left[\begin{array}{c} l\\0 \end{array}\right] +
+\dot{\varphi}\times\left( \dot{\varphi}\times R_\varphi \left[\begin{array}{c} l\\0 \end{array}\right]\right).
+\end{array}\]
+
+<p>Note that the first component of both \(\dot{\vec{x}}_2\lvert_{\mathcal{S}_1}\) and \(\ddot{\vec{x}}_2\lvert_{\mathcal{S}_1}\) is a vector tangential to the circle periphery,
+but \(\dot{\vec{x}}_1\lvert_{\mathcal{S}_1}\) also comprises a vector along horizontal axis 
+while \(\ddot{\vec{x}}_1\lvert_{\mathcal{S}_1}\) comprises instead a vector pointed along the rod.</p>
+
+<h2 id="identifying-forces-">Identifying forces <a name="Forces"></a></h2>
+
+<p>Let’s take a look on what provokes rotation of the rod at \(t=t_0\).</p>
+
+<p>Multiplying eq.(1) by \(m\) the force seen at \(x_2\) is</p>
+
+\[m\ddot{\vec{x}}_2\left.\right|_{\mathcal{S}_1} = \vec{F}_2 \left.\right|_{\mathcal{S}_0} - m\ddot{\vec{x}}_1\left.\right|_{\mathcal{S}_0}, \qquad (2)\]
+
+<p>where \(\vec{F}_2\lvert_{\mathcal{S}_0}\) is essentially a reaction force along the rod, 
+<!--thus not producing torque.
+On the other hand, 
+thus having both the normal $$\left(\vec{F}_n\right)$$ and tangential $$\left(\vec{F}_\tau\right)$$ components relative to $$\overrightarrow{x_2-x_1}$$.
+ From notions on **Fig.1** follows $$F_n=F\sin\varphi$$.
+  $$\overrightarrow{x_2-x_1}$$.
+-->
+while \(\ddot{\vec{x}}_1\left.\right|_{\mathcal{S}_0}\) is pointed to right on our picture.</p>
+
+<p>Accounting rotational nature of movement in \(\mathcal{S}_1\), we vector-multiply both sides of (2) 
+by \(x_2\lvert_{\mathcal{S}_1}\) and then discard a component of \(x_2\lvert_{\mathcal{S}_1}\) being parallel to it:</p>
+
+\[l^2\ddot{\varphi} = \vec{x}_2\left.\right|_{\mathcal{S}_1} \times \vec{F}_1\left.\right|_{\mathcal{S}_0}  \qquad (3)\]
+
+<p>By \(\vec{F}_1\) in (3) is designated a force that brings the whole thing to motion, namely increases the velocity  of \(x_1\) from \(0\) to \(v\) inside some arbitrary time span \(\Delta t\). 
+As \(\vec{F}\) is pointed to right on the setup plane, it comprises components pointed 
+normally and tangentially to \(x_2\lvert_{\mathcal{S}_1}\).  From notions on <strong>Fig.1</strong> follows \(\vec{F}^\perp_1=F_1\sin\varphi_0=\frac{mv}{\Delta t}\sin\varphi_0\), 
+with \(\varphi_0\) being the angle at \(t=t_0\).</p>
+
+<p><!--
+ i.e. $$\vec{F}_\tau$$ 
+ From FPD  $$ F\Delta t = mv, $$ where $$\Delta t$$ might be thought of being arbitrarly small, $$m$$ is a point mass taken $$m=1$$ in the following.
+I.e. some force $$F$$ must have been applied to $$S_1$$ to set it in motion. 
+This force provides an "apparent" force inside $$S_1$$ as seen from following considerations: 
+--></p>
+
+<!--
+
+
+
+
+where $$x\lvert_{\mathcal{S}_i}$$ is a coordinate of $$x$$ in r.f. $$\mathcal{S}_i$$.
+
+Passing from accelerations to forces one identify apparent force seen by $$x_2$$ in $$\mathcal{S}_1$$ as
+
+$$ \vec{F}_2\left.\right|_{\mathcal{S}_1} = \vec{F}_2 \left.\right|_{\mathcal{S}_0} + \vec{F},$$
+
+Following the setup, the component $$\vec{F}_2\lvert_{\mathcal{S}_0}$$ is essentially a reaction force along the rod, thus not producing torque.
+On the other hand, 
+\Delta M  \overset{\Delta}{=}
+where $$I_z=\frac{1}{2}ml^2$$ is a moment of inertia of $$x_2$$ relative to z-axis through $$x_1$$.
+-->
+
+<p>Following (3) the change of \(\varphi\) that occurs during time span \(\Delta t\)  is then</p>
+
+\[\Delta\dot{\varphi}=-\frac{v}{l}\sin\varphi_0.\]
+
+<p>Under frictionless assumption there are no torque-generating forces in \(S_1\), so rotation is not altered at \(t&gt;t_0\) (i.e. <em>the moment is conserved</em> ).</p>
+
+<p>The resulted motion under frictionless assumption is depicted on <strong>Fig.3</strong>.</p>
 
 <p><img src="/assets/pics/SlidingRotate/fig3.gif" alt="pic3" /></p>
 
@@ -133,29 +201,13 @@ On the other hand, \(\vec{F}\) is always pointed to right on our picture,
 <p>Things get more interesting when some friction is added in the mix.
 The following model is adopted for friction here:</p>
 
-\[\vec{f} = -k\dot{x},\]
+\[\vec{f} = -k\dot{\vec{x}},\]
 
 <p>where \(\vec{f}\) is a friction force, \(k\) is a friction coefficient.</p>
 
-\[\dot{x}_2 \left.\right|_{\mathcal{S}_0}  = \left[\begin{array}{c} v\\0 \end{array}\right] + \frac{d}{dt}R_\varphi \left[\begin{array}{c} l\\0 \end{array}\right],\]
-
-<p>the \(R_\varphi\) defines a rotation matrix:</p>
-
-\[R_\varphi = \left(\begin{array}{lr} \cos\varphi &amp; -\sin\varphi\\ \sin\varphi &amp; \cos\varphi\end{array}\right)\]
-
-<p>Accounting \(\cos\varphi\sim1, \sin\varphi\sim\varphi\) for small \(\varphi\) one may write</p>
-
-<p>\(dR_\varphi= R_{d\varphi} R_\varphi \sim \left(\begin{array}{lr} 0&amp;-d\varphi\\d\varphi&amp;0\end{array}\right)R_\varphi\).</p>
-
-<p>The above equation for \(\dot{x}_2\) can then be rewritten as follows:</p>
-
-\[\dot{x}_2 \left.\right|_{\mathcal{S}_0}  = \left[\begin{array}{c} v\\0 \end{array}\right] + \dot{\varphi}\times R_\varphi \left[\begin{array}{c} l\\0 \end{array}\right],\]
-
-<p>where \(\cdot\times\cdot\) stands for vector product.</p>
-
 <p>The motion in \(\mathcal{S}_1\) is then defined by</p>
 
-\[I_z\ddot{\varphi} = \overrightarrow{x_2-x_1} \times \vec{f} = \left[\begin{array}{r}-lcos\varphi\\l\sin\varphi\end{array}\right] \times
+\[I_z\ddot{\varphi} = x_2\left.\right|_{\mathcal{S}_1} \times \vec{f} = \left[\begin{array}{r}-lcos\varphi\\l\sin\varphi\end{array}\right] \times
 \left[\begin{array}{l}-kv - k\dot{\varphi}l\sin\varphi\\-k\dot{\varphi}l\cos\varphi\end{array}\right] = -kl\left(v\sin\varphi + \dot{\varphi}l\right)\]
 
 <p>The latter equation describes the self-controlling property of the motion as the torque is always pointed counter-wise with the direction of rotation, i.e. the signs \(\ddot{\varphi}\) and \(\dot{\varphi}\) are opposite.
